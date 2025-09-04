@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tá Seguro - Proteção Contra Spam e Golpes Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #0d1b2a;
+            --purple: #7b2cbf;
+            --light-purple: #9d4edd;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, #1e1e2e 100%);
+            color: var(--white);
+            min-height: 100vh;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--purple) 0%, var(--dark-blue) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(123, 44, 191, 0.3);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(123, 44, 191, 0.2);
+            border-color: var(--light-purple);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--light-purple) 0%, var(--purple) 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(123, 44, 191, 0.4);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid var(--light-purple);
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--light-purple) }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .tool-result {
+            transition: all 0.5s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        
+        .tool-result.show {
+            max-height: 500px;
+        }
+        
+        .security-meter {
+            transition: width 2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg py-4 px-6 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                    <i class="fas fa-shield-alt text-purple-700 text-xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-white">Tá Seguro</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-white hover:text-purple-300 transition-colors">Início</a>
+                <a href="#ferramentas" class="text-white hover:text-purple-300 transition-colors">Ferramentas</a>
+                <a href="#protecoes" class="text-white hover:text-purple-300 transition-colors">Proteções</a>
+                <a href="#sobre" class="text-white hover:text-purple-300 transition-colors">Sobre</a>
+            </nav>
+            
+            <button class="bg-white text-purple-700 px-6 py-2 rounded-full font-semibold hover:bg-purple-100 transition-colors">
+                Começar Agora
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="py-20 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 typewriter">
+                Sua segurança online em primeiro lugar
+            </h2>
+            <p class="text-xl text-purple-200 mb-10 max-w-3xl mx-auto">
+                Proteção inteligente contra spam, links falsos e golpes digitais. 
+                Nossa tecnologia avançada mantém você seguro enquanto navega na internet.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6 mb-16">
+                <button class="btn-primary px-8 py-4 rounded-full text-lg font-semibold pulse">
+                    <i class="fas fa-shield-alt mr-2"></i>Verificar Segurança
+                </button>
+                <button class="bg-white text-purple-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-100 transition-colors">
+                    <i class="fas fa-play-circle mr-2"></i>Como Funciona
+                </button>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto">
+                <img src="https://placehold.co/1200x600" alt="Dashboard moderno de segurança cibernética mostrando estatísticas de proteção em tempo real com gráficos e indicadores coloridos" class="w-full rounded-xl shadow-2xl" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tools Section -->
+    <section id="ferramentas" class="py-20 px-6 bg-black/20">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Ferramentas Interativas de Segurança</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- URL Checker -->
+                <div class="card-hover bg-gray-900/50 p-6 rounded-2xl">
+                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-link text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Verificador de Links</h3>
+                    <p class="text-purple-200 mb-4">Verifique se um link é seguro antes de clicar</p>
+                    
+                    <div class="space-y-4">
+                        <input type="text" id="urlInput" placeholder="Cole o link suspeito aqui" 
+                               class="w-full px-4 py-3 bg-gray-800 border border-purple-600 rounded-lg text-white placeholder-purple-300">
+                        <button onclick="checkURL()" class="btn-primary w-full py-3 rounded-lg font-semibold">
+                            Verificar Segurança
+                        </button>
+                    </div>
+                    
+                    <div id="urlResult" class="tool-result mt-4 p-4 rounded-lg bg-gray-800">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-shield text-green-400"></i>
+                            <span>Resultado da análise aparecerá aqui</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spam Analyzer -->
+                <div class="card-hover bg-gray-900/50 p-6 rounded-2xl">
+                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-envelope text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Analisador de Spam</h3>
+                    <p class="text-purple-200 mb-4">Analise mensagens suspeitas em tempo real</p>
+                    
+                    <textarea id="spamInput" placeholder="Cole o conteúdo suspeito aqui" 
+                             class="w-full px-4 py-3 bg-gray-800 border border-purple-600 rounded-lg text-white placeholder-purple-300 h-32 resize-none"></textarea>
+                    
+                    <button onclick="analyzeSpam()" class="btn-primary w-full py-3 rounded-lg font-semibold mt-4">
+                        Analisar Mensagem
+                    </button>
+                    
+                    <div id="spamResult" class="tool-result mt-4 p-4 rounded-lg bg-gray-800">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-search text-blue-400"></i>
+                            <span>Análise de spam aparecerá aqui</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Quiz -->
+                <div class="card-hover bg-gray-900/50 p-6 rounded-2xl">
+                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Teste Seu Conhecimento</h3>
+                    <p class="text-purple-200 mb-4">Quiz interativo sobre segurança digital</p>
+                    
+                    <div id="quizContainer">
+                        <p class="text-lg font-semibold mb-4" id="quizQuestion">O que você faria se recebesse um email prometendo um prêmio?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option w-full text-left p-3 bg-gray-700 rounded-lg hover:bg-purple-600 transition-colors">
+                                A) Clicaria imediatamente no link
+                            </button>
+                            <button class="quiz-option w-full text-left p-3 bg-gray-700 rounded-lg hover:bg-purple-600 transition-colors">
+                                B) Verificaria o remetente e desconfiaria
+                            </button>
+                            <button class="quiz-option w-full text-left p-3 bg-gray-700 rounded-lg hover:bg-purple-600 transition-colors">
+                                C) Encaminharia para todos os contatos
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="quizResult" class="tool-result mt-4 p-4 rounded-lg bg-gray-800 hidden">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span>Resultado do quiz aparecerá aqui</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Protections Section -->
+    <section id="protecoes" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Como Nós Protegemos Você</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="card-hover text-center p-8 bg-gray-900/50 rounded-2xl">
+                    <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-ban text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Bloqueio de Spam</h3>
+                    <p class="text-purple-200">Inteligência artificial avançada detecta e bloqueia mensagens indesejadas automaticamente</p>
+                </div>
+                
+                <div class="card-hover text-center p-8 bg-gray-900/50 rounded-2xl">
+                    <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-exclamation-triangle text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Detecção de Golpes</h3>
+                    <p class="text-purple-200">Sistema de alerta precoce para phishing, golpes e tentativas de fraude online</p>
+                </div>
+                
+                <div class="card-hover text-center p-8 bg-gray-900/50 rounded-2xl">
+                    <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-lock text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Links Seguros</h3>
+                    <p class="text-purple-200">Verificação em tempo real de URLs para garantir que você só acesse sites confiáveis</p>
+                </div>
+            </div>
+
+            <!-- Security Meter -->
+            <div class="bg-gray-900/50 rounded-2xl p-8 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-semibold text-center mb-6">Seu Nível de Segurança Atual</h3>
+                
+                <div class="bg-gray-800 rounded-full h-8 mb-6 overflow-hidden">
+                    <div id="securityMeter" class="security-meter h-full bg-gradient-to-r from-green-400 via-yellow-400 to-red-400 w-0%"></div>
+                </div>
+                
+                <div class="grid grid-cols-3 text-center text-sm text-purple-200 mb-8">
+                    <span>Baixo</span>
+                    <span>Médio</span>
+                    <span>Alto</span>
+                </div>
+                
+                <button onclick="updateSecurityMeter()" class="btn-primary mx-auto block px-8 py-3 rounded-full font-semibold">
+                    <i class="fas fa-sync-alt mr-2"></i>Atualizar Análise
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 px-6 gradient-bg">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-4xl font-bold text-white mb-2">500K+</div>
+                    <div class="text-purple-200">Links Verificados</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold text-white mb-2">99.9%</div>
+                    <div class="text-purple-200">Precisão</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold text-white mb-2">24/7</div>
+                    <div class="text-purple-200">Proteção</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold text-white mb-2">10M+</div>
+                    <div class="text-purple-200">Ameaças Bloqueadas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="sobre" class="py-12 px-6 bg-black/50">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-purple-700"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Tá Seguro</h3>
+                    </div>
+                    <p class="text-purple-200">Protegendo usuários contra ameaças digitais desde 2023.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Recursos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-purple-200 hover:text-white transition-colors">Verificador de Links</a></li>
+                        <li><a href="#" class="text-purple-200 hover:text-white transition-colors">Analisador de Spam</a></li>
+                        <li><a href="#" class="text-purple-200 hover:text-white transition-colors">Quiz de Segurança</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Suporte</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-purple-200 hover:text-white transition-colors">Central de Ajuda</a></li>
+                        <li><a href="#" class="text-purple-200 hover:text-white transition-colors">Contato</a></li>
+                        <li><a href="#" class="text-purple-200 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Newsletter</h4>
+                    <div class="flex space-x-2">
+                        <input type="email" placeholder="Seu email" class="flex-1 px-3 py-2 bg-gray-700 rounded-lg text-white">
+                        <button class="bg-purple-600 px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-purple-200">
+                <p>&copy; 2023 Tá Seguro. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive Functions
+        function checkURL() {
+            const urlInput = document.getElementById('urlInput');
+            const urlResult = document.getElementById('urlResult');
+            
+            if (!urlInput.value) {
+                showResult(urlResult, 'Por favor, insira um URL para verificar', 'error');
+                return;
+            }
+            
+            // Simulate analysis
+            showResult(urlResult, 'Analisando URL...', 'loading');
+            
+            setTimeout(() => {
+                const isSafe = Math.random() > 0.3;
+                if (isSafe) {
+                    showResult(urlResult, '✅ URL seguro! Este link parece legítimo e seguro para acesso.', 'success');
+                } else {
+                    showResult(urlResult, '⚠️ Cuidado! Este link pode ser malicioso. Recomendamos não clicar.', 'warning');
+                }
+            }, 2000);
+        }
+        
+        function analyzeSpam() {
+            const spamInput = document.getElementById('spamInput');
+            const spamResult = document.getElementById('spamResult');
+            
+            if (!spamInput.value) {
+                showResult(spamResult, 'Por favor, insira o conteúdo para análise', 'error');
+                return;
+            }
+            
+            showResult(spamResult, 'Analisando conteúdo...', 'loading');
+            
+            setTimeout(() => {
+                const spamScore = Math.random();
+                if (spamScore < 0.3) {
+                    showResult(spamResult, '✅ Conteúdo seguro. Parece ser uma mensagem legítima.', 'success');
+                } else if (spamScore < 0.7) {
+                    showResult(spamResult, '⚠️ Suspeito. Contém elementos que podem indicar spam.', 'warning');
+                } else {
+                    showResult(spamResult, '❌ Alto risco! Provavelmente é spam malicioso. Não responda.', 'error');
+                }
+            }, 2000);
+        }
+        
+        function showResult(element, message, type) {
+            element.classList.add('show');
+            let icon = 'fas fa-info-circle';
+            let color = 'text-blue-400';
+            
+            switch(type) {
+                case 'success':
+                    icon = 'fas fa-check-circle';
+                    color = 'text-green-400';
+                    break;
+                case 'warning':
+                    icon = 'fas fa-exclamation-triangle';
+                    color = 'text-yellow-400';
+                    break;
+                case 'error':
+                    icon = 'fas fa-times-circle';
+                    color = 'text-red-400';
+                    break;
+                case 'loading':
+                    icon = 'fas fa-spinner fa-spin';
+                    color = 'text-blue-400';
+                    break;
+            }
+            
+            element.innerHTML = `
+                <div class="flex items-center space-x-3">
+                    <i class="${icon} ${color} text-xl"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+        }
+        
+        function updateSecurityMeter() {
+            const meter = document.getElementById('securityMeter');
+            const randomLevel = Math.floor(Math.random() * 100);
+            meter.style.width = randomLevel + '%';
+            
+            // Change color based on level
+            if (randomLevel < 33) {
+                meter.className = 'security-meter h-full bg-red-500 w-' + randomLevel + '%';
+            } else if (randomLevel < 66) {
+                meter.className = 'security-meter h-full bg-yellow-500 w-' + randomLevel + '%';
+            } else {
+                meter.className = 'security-meter h-full bg-green-500 w-' + randomLevel + '%';
+            }
+        }
+        
+        // Quiz functionality
+        document.querySelectorAll('.quiz-option').forEach(button => {
+            button.addEventListener('click', function() {
+                const quizResult = document.getElementById('quizResult');
+                quizResult.classList.remove('hidden');
+                
+                if (this.textContent.includes('B) Verificaria')) {
+                    showResult(quizResult, '🎉 Resposta correta! Sempre verifique o remetente e desconfie de promessas muito boas.', 'success');
+                } else {
+                    showResult(quizResult, '❌ Resposta arriscada. Clicar em links suspeitos pode comprometer sua segurança.', 'error');
+                }
+            });
+        });
+        
+        // Initialize security meter
+        document.addEventListener('DOMContentLoaded', function() {
+            updateSecurityMeter();
+            
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__fadeInUp');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.card-hover').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tá Seguro - Proteção Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-purple: #6B46C1;
+            --dark-purple: #553C9A;
+            --navy-blue: #1E293B;
+            --dark-blue: #0F172A;
+            --light-purple: #9F7AEA;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--navy-blue) 100%);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--dark-blue) 100%);
+        }
+        
+        .card-gradient {
+            background: linear-gradient(145deg, rgba(107, 70, 193, 0.1) 0%, rgba(30, 41, 59, 0.3) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .scanner-animation {
+            animation: scan 3s ease-in-out infinite;
+        }
+        
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(159, 122, 234, 0.3);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navbar -->
+    <nav class="gradient-bg p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3 glow-effect">
+                    <span class="text-purple-800 font-bold text-xl">TS</span>
+                </div>
+                <h1 class="text-2xl font-bold text-white">Tá Seguro</h1>
+            </div>
+            
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-white hover:text-purple-300 transition">Início</a>
+                <a href="#services" class="text-white hover:text-purple-300 transition">Serviços</a>
+                <a href="#scanner" class="text-white hover:text-purple-300 transition">Scanner</a>
+                <a href="#education" class="text-white hover:text-purple-300 transition">Educação</a>
+                <a href="#contact" class="text-white hover:text-purple-300 transition">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 gradient-bg">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                        Sua segurança digital<br>
+                        <span class="text-purple-300">está protegida</span>
+                    </h2>
+                    <p class="text-xl text-gray-300 mb-8">
+                        Detectamos e prevenimos golpes, spams e links falsos em tempo real. 
+                        Mantenha seus dados seguros com nossa tecnologia avançada.
+                    </p>
+                    <button onclick="startQuickScan()" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition transform hover:scale-105 glow-effect">
+                        Verificar Segurança Agora
+                    </button>
+                </div>
+                
+                <div class="relative">
+                    <div class="card-gradient rounded-2xl p-8">
+                        <div class="relative overflow-hidden rounded-xl h-80">
+                            <img src="https://placehold.co/600x400" alt="Interface moderna de dashboard de segurança cibernética com gráficos, alertas e indicadores visuais em tons de roxo e azul" class="w-full h-full object-cover" />
+                            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-purple-900/50 to-blue-900/50"></div>
+                            <div class="scanner-animation absolute left-0 w-full h-2 bg-green-400 opacity-60"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-[#0F172A]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossos Serviços de Proteção</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Tecnologia avançada para manter você seguro no mundo digital
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="card-gradient rounded-2xl p-6 transform hover:scale-105 transition">
+                    <div class="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl">🛡️</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Prevenção de Golpes</h3>
+                    <p class="text-gray-300">
+                        Detectamos e bloqueamos tentativas de phishing, golpes financeiros e fraudes digitais antes que eles cheguem até você.
+                    </p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="card-gradient rounded-2xl p-6 transform hover:scale-105 transition">
+                    <div class="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl">📧</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Detecção de Spam</h3>
+                    <p class="text-gray-300">
+                        Sistema inteligente que identifica e filtra mensagens suspeitas, protegendo sua caixa de entrada de conteúdo malicioso.
+                    </p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="card-gradient rounded-2xl p-6 transform hover:scale-105 transition">
+                    <div class="w-16 h-16 bg-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl">🔗</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Verificação de Links</h3>
+                    <p class="text-gray-300">
+                        Analisamos URLs em tempo real para identificar sites falsos, malware e outras ameaças antes do clique.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Scanner -->
+    <section id="scanner" class="py-20 gradient-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Scanner de Segurança</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Teste links e mensagens suspeitas com nossa ferramenta interativa
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="card-gradient rounded-2xl p-8">
+                    <div class="mb-6">
+                        <label class="block text-lg font-semibold mb-3">Cole o link suspeito:</label>
+                        <div class="flex gap-4">
+                            <input type="text" id="linkInput" placeholder="https://exemplo.com" 
+                                   class="flex-1 bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500">
+                            <button onclick="scanLink()" class="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg font-semibold transition">
+                                Verificar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-lg font-semibold mb-3">Ou analise um texto suspeito:</label>
+                        <textarea id="textInput" placeholder="Cole aqui o texto da mensagem suspeita..." 
+                                 class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 h-32"></textarea>
+                        <button onclick="scanText()" class="mt-3 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition">
+                            Analisar Texto
+                        </button>
+                    </div>
+                    
+                    <div id="scanResult" class="mt-8 p-6 rounded-lg bg-gray-800 hidden">
+                        <h4 class="text-lg font-semibold mb-4">Resultado da Análise:</h4>
+                        <div id="resultContent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-[#0F172A]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Educação em Segurança</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Aprenda a se proteger com nossos guias e dicas
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="card-gradient rounded-2xl p-8">
+                    <h3 class="text-2xl font-semibold mb-6">Como Identificar Golpes</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-sm">1</span>
+                            </div>
+                            <p>Verifique sempre o remetente de emails e mensagens</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-sm">2</span>
+                            </div>
+                            <p>Desconfie de urgências e prazos curtos</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-sm">3</span>
+                            </div>
+                            <p>Nunca clique em links sem verificar</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-gradient rounded-2xl p-8">
+                    <h3 class="text-2xl font-semibold mb-6">Dicas de Prevenção</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-sm">1</span>
+                            </div>
+                            <p>Use senhas fortes e diferentes para cada serviço</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-sm">2</span>
+                            </div>
+                            <p>Ative a autenticação de dois fatores</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-sm">3</span>
+                            </div>
+                            <p>Mantenha software e antivírus atualizados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interactive Quiz -->
+            <div class="card-gradient rounded-2xl p-8">
+                <h3 class="text-2xl font-semibold mb-6">Teste Seu Conhecimento</h3>
+                <div id="quiz-container">
+                    <p class="text-lg mb-6" id="quiz-question">Você recebe um email do seu banco pedindo para atualizar seus dados. O que fazer?</p>
+                    <div class="space-y-3">
+                        <button onclick="answerQuiz('A')" class="w-full text-left p-4 bg-gray-700 hover:bg-gray-600 rounded-lg transition">
+                            A) Clicar no link e atualizar imediatamente
+                        </button>
+                        <button onclick="answerQuiz('B')" class="w-full text-left p-4 bg-gray-700 hover:bg-gray-600 rounded-lg transition">
+                            B) Verificar o endereço do remetente e entrar em contato com o banco
+                        </button>
+                        <button onclick="answerQuiz('C')" class="w-full text-left p-4 bg-gray-700 hover:bg-gray-600 rounded-lg transition">
+                            C) Encaminhar para amigos para verificar
+                        </button>
+                    </div>
+                    <div id="quiz-feedback" class="mt-6 p-4 rounded-lg hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Entre em Contato</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Precisa de ajuda ou tem alguma dúvida sobre segurança digital?
+                </p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="card-gradient rounded-2xl p-8">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-lg font-semibold mb-2">Nome</label>
+                            <input type="text" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500">
+                        </div>
+                        <div>
+                            <label class="block text-lg font-semibold mb-2">Email</label>
+                            <input type="email" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500">
+                        </div>
+                        <div>
+                            <label class="block text-lg font-semibold mb-2">Mensagem</label>
+                            <textarea class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 h-32"></textarea>
+                        </div>
+                        <button type="button" onclick="submitContact()" class="w-full bg-purple-600 hover:bg-purple-700 py-3 rounded-lg font-semibold text-lg transition">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0F172A] py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-8">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 glow-effect">
+                    <span class="text-purple-800 font-bold text-2xl">TS</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Tá Seguro</h3>
+                <p class="text-gray-400">Protegendo você no mundo digital</p>
+            </div>
+            
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-white transition">Privacidade</a>
+                <a href="#" class="text-gray-400 hover:text-white transition">Termos</a>
+                <a href="#" class="text-gray-400 hover:text-white transition">Suporte</a>
+            </div>
+            
+            <p class="text-gray-500">© 2024 Tá Seguro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive Scanner Functions
+        function scanLink() {
+            const link = document.getElementById('linkInput').value;
+            const resultDiv = document.getElementById('scanResult');
+            const resultContent = document.getElementById('resultContent');
+            
+            if (!link) {
+                showResult('Por favor, insira um link para verificar.', 'warning');
+                return;
+            }
+            
+            // Simulate scanning process
+            showLoading();
+            
+            setTimeout(() => {
+                const isSafe = Math.random() > 0.3; // 70% chance of being safe for demo
+                if (isSafe) {
+                    showResult('✅ Link seguro! Este link parece legítimo e não apresenta ameaças conhecidas.', 'success');
+                } else {
+                    showResult('⚠️ Atenção! Este link pode ser malicioso. Recomendamos não clicar.', 'danger');
+                }
+            }, 2000);
+        }
+        
+        function scanText() {
+            const text = document.getElementById('textInput').value;
+            const resultDiv = document.getElementById('scanResult');
+            const resultContent = document.getElementById('resultContent');
+            
+            if (!text) {
+                showResult('Por favor, insira um texto para analisar.', 'warning');
+                return;
+            }
+            
+            showLoading();
+            
+            setTimeout(() => {
+                // Simple spam detection simulation
+                const spamKeywords = ['urgente', 'oferta', 'grátis', 'prêmio', 'banco', 'atualize', 'clique'];
+                const foundKeywords = spamKeywords.filter(keyword => 
+                    text.toLowerCase().includes(keyword.toLowerCase())
+                );
+                
+                if (foundKeywords.length > 2) {
+                    showResult('🚨 Possível mensagem suspeita detectada! Encontramos elementos comuns de golpes.', 'danger');
+                } else {
+                    showResult('✅ Mensagem parece segura. Continue com cautela.', 'success');
+                }
+            }, 2000);
+        }
+        
+        function showLoading() {
+            const resultDiv = document.getElementById('scanResult');
+            const resultContent = document.getElementById('resultContent');
+            
+            resultDiv.classList.remove('hidden');
+            resultContent.innerHTML = `
+                <div class="flex items-center">
+                    <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-purple-500 mr-3"></div>
+                    <span>Analisando...</span>
+                </div>
+            `;
+        }
+        
+        function showResult(message, type) {
+            const resultContent = document.getElementById('resultContent');
+            const color = type === 'success' ? 'text-green-400' : type === 'warning' ? 'text-yellow-400' : 'text-red-400';
+            
+            resultContent.innerHTML = `
+                <div class="${color} font-semibold">
+                    ${message}
+                </div>
+                <p class="text-gray-300 mt-3">
+                    Lembre-se: sempre verifique a fonte antes de clicar em links ou fornecer informações.
+                </p>
+            `;
+        }
+        
+        // Quick Scan Simulation
+        function startQuickScan() {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50';
+            modal.innerHTML = `
+                <div class="bg-gray-800 rounded-2xl p-8 max-w-md w-full mx-4">
+                    <h3 class="text-xl font-semibold mb-4">Verificação de Segurança</h3>
+                    <div class="relative h-2 bg-gray-600 rounded-full mb-6 overflow-hidden">
+                        <div class="absolute top-0 left-0 h-full bg-purple-600 rounded-full progress-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">Verificando sistema...</p>
+                    <div id="scan-steps" class="space-y-2 text-sm text-gray-400"></div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            const steps = [
+                'Verificando links suspeitos...',
+                'Analisando configurações de segurança...',
+                'Verificando atualizações...',
+                'Procurando por malware...'
+            ];
+            
+            let currentStep = 0;
+            const stepsContainer = modal.querySelector('#scan-steps');
+            const progressBar = modal.querySelector('.progress-bar');
+            
+            const interval = setInterval(() => {
+                if (currentStep < steps.length) {
+                    stepsContainer.innerHTML += `<div>✅ ${steps[currentStep]}</div>`;
+                    progressBar.style.width = `${((currentStep + 1) / steps.length) * 100}%`;
+                    currentStep++;
+                } else {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        modal.remove();
+                        alert('✅ Verificação completa! Seu sistema parece seguro.');
+                    }, 1000);
+                }
+            }, 800);
+            
+            // Allow closing modal
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    clearInterval(interval);
+                    modal.remove();
+                }
+            });
+        }
+        
+        // Quiz Functionality
+        function answerQuiz(answer) {
+            const feedback = document.getElementById('quiz-feedback');
+            
+            if (answer === 'B') {
+                feedback.innerHTML = `
+                    <div class="text-green-400 font-semibold">
+                        ✅ Correto! Sempre verifique o remetente e entre em contato diretamente com a instituição.
+                    </div>
+                    <p class="text-gray-300 mt-2">
+                        Bancos nunca pedem informações sensíveis por email. Use sempre canais oficiais.
+                    </p>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-400 font-semibold">
+                        ❌ Cuidado! Esta não é a ação mais segura.
+                    </div>
+                    <p class="text-gray-300 mt-2">
+                        Nunca clique em links suspeitos ou compartilhe emails sem verificação.
+                        A alternativa B é a mais segura.
+                    </p>
+                `;
+            }
+            
+            feedback.classList.remove('hidden');
+        }
+        
+        // Contact Form Submission
+        function submitContact() {
+            alert('Obrigado pelo contato! Nossa equipe entrará em contato em breve.');
+            // In a real implementation, this would send the form data to a server
+        }
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
